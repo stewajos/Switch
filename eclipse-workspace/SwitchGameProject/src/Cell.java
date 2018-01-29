@@ -1,5 +1,9 @@
+import java.awt.Color;
+
 public class Cell implements Comparable<Cell> {
     public int row, column, value;
+    public Color color = null;
+    
 
     public Cell()
     {
@@ -52,4 +56,22 @@ public class Cell implements Comparable<Cell> {
 	public void setValue(int value) {
 		this.value = value;
 	}
+	public void setColor(Cell c){
+		switch(c.value){
+		case 1: c.color =color.BLACK;
+		break;
+		//if value contained in cell is 1, then change color of the tile to black.
+		case 2: c.color = color.white;
+		break; 
+		//if value contained in cell is 1, then change color of the tile to white. 
+		default: c.color = null;
+		// if no value is contained within the cell that is passed cell is unclaimed.
+		}
+		
+			//returns the new color of the cell if changes are made. 
+	}
+	public Color getColor(Cell c){
+		return c.color;
+	}
+	
 }
