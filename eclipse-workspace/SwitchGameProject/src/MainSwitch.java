@@ -16,8 +16,10 @@ public class MainSwitch extends Application{
 	final int SQUARES = 64;
 	GridPane board = new GridPane(); 
 	
+
 	public static void main(String args[])
 	{
+
 		launch(args);
 	}
 	public void start(Stage primaryStage) {
@@ -54,5 +56,6 @@ public class MainSwitch extends Application{
 				board.add(new Rectangle(SQUARES, SQUARES,sqColors[(i+j)%2]),i,j);
 			}
 		}
+
 	}
 }
