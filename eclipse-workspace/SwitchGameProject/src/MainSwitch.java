@@ -10,13 +10,15 @@ import javafx.stage.Stage;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle; 
 import javafx.scene.input.MouseEvent; 
+import javafx.scene.shape.Circle; 
 
 public class MainSwitch extends Application{
 	final int BOARD_SIZE = 8; 
 	final int SQUARES = 64;
 	GridPane board = new GridPane(); 
+	Cell[] gamePieces = new Cell[64];
 	
-
+	
 	public static void main(String args[])
 	{
 
@@ -56,6 +58,18 @@ public class MainSwitch extends Application{
 				board.add(new Rectangle(SQUARES, SQUARES,sqColors[(i+j)%2]),i,j);
 			}
 		}
+		//add initial pieces here
+		gamePieces[0] = new Cell(4, 3, 1);
+		gamePieces[1] = new Cell(4, 4, 2);
+		gamePieces[2] = new Cell(3, 4, 1);
+		gamePieces[3] = new Cell(3, 3, 2);
+		board.add(new Circle(32, Color.BLACK), gamePieces[0].getRow(), gamePieces[0].getColumn());
+		board.add(new Circle(32, Color.WHITE), gamePieces[1].getRow(), gamePieces[1].getColumn());
+		board.add(new Circle(32, Color.BLACK), gamePieces[2].getRow(), gamePieces[2].getColumn());
+		board.add(new Circle(32, Color.WHITE), gamePieces[3].getRow(), gamePieces[3].getColumn());
 
 	}
+	//private void placePiecesOnBoard(GridPane board) implements MouseListener{
+		
+//	}
 }
